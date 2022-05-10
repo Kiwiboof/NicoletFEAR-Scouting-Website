@@ -7,7 +7,23 @@ var auto_miss = 0;
 var teleop_high = 0;
 var teleop_low = 0;
 var teleop_miss = 0;
+var climbing = false;
 var climb = 0;
+
+$('#start').click(function() {
+  startTimer();
+});
+
+$('#stop').click(function() {
+  clearTimeout(timex);
+});
+
+$('#reset').click(function() {
+  mins = 2;
+  seconds = 30;
+  $('#mins').html('2:');
+  $('#seconds').html('30');
+});
 
 $('#cargo-pickup').click(function() {
   auto_pickup++;
@@ -39,19 +55,17 @@ $('#low-goal').click(function() {
   $('#teleop-low-shots').html(teleop_low);
 });
 
-$('#start').click(function() {
-  startTimer();
+$('#missed').click(function() {
+  teleop_miss++;
+  $('#teleop-missed-shots').html(teleop_miss);
 });
 
-$('#stop').click(function() {
-  clearTimeout(timex);
+$('#climb-start').click(function() {
+  climbing = true;
 });
 
-$('#reset').click(function() {
-  mins = 2;
-  seconds = 30;
-  $('#mins').html('2:');
-  $('#seconds').html('30');
+$('#climb-end').click(function() {
+  climbing = false;
 });
 
 function startTimer() {
