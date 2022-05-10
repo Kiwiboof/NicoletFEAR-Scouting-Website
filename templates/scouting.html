@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scouting Sheet</title>
+    <link rel="stylesheet" href="/static/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no,    minimal-ui">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <form id="scouting-form" action="{{ url_for("home")}}" method="POST">
+    <div class="page-top">
+      <img class="page-logo" src="https://nicoletfear.com/wp-content/uploads/2018/12/ezgif.com-gif-maker.gif">
+      <h1 class="page-title">Scouting Sheet</h1>
+      <input type="text" class="user-input-box" id="name" name="name" placeholder="Name" autocomplete="off">
+    </div>
+      <div class="content">
+        <div class="timing" id="timing">
+          <b>Timer:</b>
+          <span id="mins">2:</span>
+          <span id="seconds">30</span>
+          <button type="button" class="button" id="start">Start</button>
+          <button type="button" class="button" id="stop">Stop</button>
+          <button type="button" class="button" id="reset">Reset</button>
+        </div>
+        <div class="info" id="info">
+          <input type="text" class="user-input-box" id="team-number" name="team-number" placeholder="Team #" autocomplete="off">
+          <input type="text" class="user-input-box" id="match-number" name="match-number" placeholder="Match #" autocomplete="off">
+          <select class="drop-down" name="alliance">
+            <option value ="alliance">Alliance</option>
+            <option value ="blue">Blue</option>
+            <option value ="red">Red</option>
+          </select>
+          <select class="drop-down" name="station">
+              <option value ="station">Station</option>
+              <option value ="1">1</option>
+              <option value ="2">2</option>
+              <option value ="3">3</option>
+          </select>
+        </div>
+        <div class="auto" id="auto">
+          <div class="auto-top" id="auto-top">
+            <b>Auto:</b>
+            <select class="drop-down" name="starting-position">
+              <option value ="starting-position">Start Pos</option>
+              <option value ="1">1</option>
+              <option value ="2">2</option>
+              <option value ="3">3</option>
+              <option value ="4">4</option>
+            </select>
+            Taxi
+            <input class="checkbox" type="checkbox" id="taxi" name="taxi" value="taxi">
+          </div>
+          <div class="auto-low" id="auto-low">
+            <button type="button" id="cargo-pickup" class="button">Pickup</button>
+            <button type="button" id="auto-high-goal" class="button">High</button>
+            <button type="button" id="auto-low-goal" class="button">Low</button>
+            <button type="button" id="auto-missed-goal" class="button">Miss</button>
+          </div>
+        </div>
+        <div class="teleop" id="teleop">
+          <div class="teleop-top" id="teleop-top">
+            <b>TeleOp:</b>
+            Cargo Pickup
+            <input class="checkbox" type="checkbox" id="cargo-pickup" name="cargo-pickup" value="cargo-pickup">
+            Defense
+            <input class="checkbox" type="checkbox" id="defense" name="defense" value="defense">
+          </div>
+          <div class="teleop-mid" id="teleop-mid">
+            Disabled
+            <input class="checkbox" type="checkbox" id="disabled" name="disabled" value="disabled">
+          </div>
+          <div class="teleop-low" id="teleop-low">
+            <button type="button" id="high-goal" class="button">High</button>
+            <button type="button" id="low-goal" class="button">Low</button>
+            <button type="button" id="missed" class="button">Miss</button>
+          </div>
+        </div>
+        <div class="endgame" id="endgame">
+          <div class="endgame-high" id="endgame-high">
+            <b>Endgame:</b>
+            <select class="drop-down" name="endgame-action">
+              <option value ="endgame-action">Action</option>
+              <option value ="none">None</option>
+              <option value ="climb">Climb</option>
+              <option value ="launch">Launch</option>
+              <option value ="defense">Defence</option>
+            </select>
+            <select class="drop-down" name="climb-location">
+              <option value ="location">Location</option>
+              <option value ="none">None</option>
+              <option value ="left">Left</option>
+              <option value ="middle">Middle</option>
+              <option value ="right">Right</option>
+            </select>
+            <select class="drop-down" name="rung-reached">
+              <option value ="rung-reached">Rung</option>
+              <option value ="none">None</option>
+              <option value ="low">Low</option>
+              <option value ="mid">Mid</option>
+              <option value ="traversal">High</option>
+              <option value ="traversal">Trav</option>
+            </select>
+          </div>
+        </div>
+        <div class="endgame-low" id="endgame-low">
+          <button type="button" id="climb-start" class="button">Start Climb</button>
+          <button type="button" id="end-start" class="button">End Climb</button>
+        </div>
+        <div class="finish" id="user-input">
+          <input type="text" class="user-input-box" id="notes" name="notes" placeholder="Notes" autocomplete="off">
+          <button type="submit" class="button">Send</button>
+        </div>
+        <div class="shots">
+          <div class="shots-col1">
+            Auto Pickup:
+            <span id="auto-pickup">0</span>
+            Auto High:
+            <span id="auto-high">0</span>
+          </div>
+          <div class="shots-col2">
+            Auto Low:
+            <span id="auto-low-shots">0</span>
+            Auto Miss:
+            <span id="auto-miss">0</span>
+          </div>
+          <div class="shots-col3">
+            Teleop High:
+            <span id="teleop-high-shots">0</span>
+            Teleop Low:
+            <span id="teleop-low-shots">0</span>
+          </div>
+          <div class="shots=col4">
+          </div>
+        </div>
+      </div>
+    <script src="/static/script.js"></script>
+    </form>
+  </body>
+</html>

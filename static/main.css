@@ -1,0 +1,147 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0px;
+  background-color: #222636;
+  color: #ffffff;
+}
+
+.page-top {
+  background-color: #2f3447;
+  padding: 4px;
+  box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.5);
+}
+
+.page-logo {
+  display: inline;
+  width: 32px;
+  height: 32px;
+}
+
+.page-title {
+  display: inline;
+}
+
+#name {
+  float: right;
+  width: 20%
+}
+
+.content {
+  width: 90%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.timing {
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+}
+
+.info {
+  text-align: center;
+  padding: 5px;
+}
+
+.auto {
+  text-align: center;
+  padding: 5px;
+}
+
+.auto-low {
+  text-align: center;
+  padding: 5px;
+}
+
+.teleop {
+  text-align: center;
+  padding: 5px;
+}
+
+.teleop-high {
+  
+  padding: 5px;
+}
+
+.teleop-mid {
+  padding: 5px;
+}
+
+.teleop-low {
+  padding: 5px;
+}
+
+.endgame {
+  text-align: center;
+  padding: 5px;
+}
+
+.endgame-low {
+  text-align: center;
+  padding: 5px;
+}
+
+.button {
+  background-color: #2f3447;
+  border-style: none;
+  border-radius: 5px;
+  color: #ffffff;
+  padding: 5px;
+}
+
+.button:hover {
+  background-color: #0d0f17;
+}
+
+.drop-down {
+  background-color: #2f3447;
+  border-style: none;
+  border-radius: 5px;
+  color: #ffffff;
+  padding: 4px;
+}
+
+.drop-down:hover {
+  background-color: #0d0f17;
+}
+
+
+.finish {
+  padding: 15px;
+}
+
+.user-input-box {
+  width: 70%;
+  background-color: #0d0f17;
+  border-style: none;
+  box-shadow: inset 0px 0px 12px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 5px;
+  color: #ffffff;
+}
+
+#team-number {
+    width: 15%;
+}
+
+#match-number {
+    width: 15%;
+}
+
+.button-send {
+  background-color: #2f3447;
+  border-style: none;
+  border-radius: 5px;
+  color: #ffffff;
+  padding: 5px;
+  float: right;
+}
+
+.button-send:hover {
+  background-color: #0d0f17;
+}
+
+.shots {
+  text-align: left;
+}
