@@ -36,7 +36,7 @@ $('#high-goal').click(function() {
 
 $('#low-goal').click(function() {
   teleop_low++;
-  $('#teleop-high-shots').html(teleop_high);
+  $('#teleop-low-shots').html(teleop_low);
 });
 
 $('#start').click(function() {
